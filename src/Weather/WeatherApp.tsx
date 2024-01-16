@@ -2,15 +2,15 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import symbols from "./symbols/index";
 /**
- * 
-Overview:
-The WeatherApp component is a React component designed to 
-display weather information for a given location. 
-It utilizes the Met Norway weather API to fetch current weather data 
-based on latitude and longitude coordinates.
+  
+  Overview:
+  The WeatherApp component is a React component designed to 
+  display weather information for a given location. 
+  It utilizes the Met Norway weather API to fetch current weather data 
+  based on latitude and longitude coordinates.
  */
 interface Props {
-  objectData: {
+  objectData?: {
     name: string;
     longitude: string;
     latitude: string;
@@ -25,7 +25,9 @@ type WeatherData = {
   airTemperature: string;
   symbolCode: string;
 };
-const WeatherApp = ({ objectData }: Props) => {
+const WeatherApp = ({
+  objectData = { name: "Varberg", longitude: "12.25", latitude: "57.10" },
+}: Props) => {
   const { name, longitude, latitude } = objectData as UserData;
   const [weather, setWeather] = useState<WeatherData>({
     airTemperature: "",
