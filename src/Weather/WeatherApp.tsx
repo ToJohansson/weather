@@ -70,46 +70,42 @@ const WeatherApp = ({ objectData }: Props) => {
   );
   const currentDay = daysOfWeek.find((day, index) => index === date.getDay());
 
+  const navbarStyle: React.CSSProperties = {
+    paddingTop: "20px",
+    display: "flex",
+    alignItems: "center",
+    flexDirection: "column",
+    justifyContent: "flex-end",
+    fontFamily: "'Roboto', sans-serif",
+  };
+  const tempStyle: React.CSSProperties = {
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center",
+    fontSize: "2.0em",
+    fontWeight: "bolder",
+  };
+  const placeStyle: React.CSSProperties = {
+    fontSize: "1.3em",
+    fontWeight: "bold",
+  };
+  const currentDateStyle: React.CSSProperties = {
+    fontSize: "0.7em",
+    fontWeight: "lighter",
+  };
   return (
     <>
-      <div
-        className="weather-navbar"
-        style={{
-          paddingTop: "20px",
-          display: "flex",
-          alignItems: "center",
-          flexDirection: "column",
-          justifyContent: "flex-end",
-          fontFamily: "'Roboto', sans-serif",
-        }}
-      >
-        <div className="weather-icon">
+      <div style={navbarStyle}>
+        <div>
           <img width="60px" src={(symbols as any)[weather.symbolCode]} />
         </div>
 
-        <div
-          className="weather-temp-c"
-          style={{
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "center",
-            fontSize: "2.0em",
-            fontWeight: "bolder",
-          }}
-        >
+        <div style={tempStyle}>
           {temp}
           &deg;C
         </div>
-        <div
-          className="weather-place"
-          style={{ fontSize: "1.3em", fontWeight: "bold" }}
-        >
-          {name}
-        </div>
-        <div
-          className="weather-current date"
-          style={{ fontSize: "0.7em", fontWeight: "lighter" }}
-        >
+        <div style={placeStyle}>{name}</div>
+        <div style={currentDateStyle}>
           {currentDay} {date.getDate()} {currentMonth}
         </div>
       </div>
