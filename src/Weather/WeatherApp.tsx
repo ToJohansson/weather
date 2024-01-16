@@ -78,26 +78,26 @@ const WeatherApp = ({ objectData }: Props) => {
   const currentDay = daysOfWeek.find((day, index) => index === date.getDay());
 
   const navbarStyle: React.CSSProperties = {
-    paddingTop: "20px",
+    width: "85px",
+    height: "121",
     display: "flex",
     alignItems: "center",
     flexDirection: "column",
-    justifyContent: "flex-end",
     fontFamily: "'Roboto', sans-serif",
   };
   const tempStyle: React.CSSProperties = {
     display: "flex",
     alignItems: "center",
     justifyContent: "center",
-    fontSize: "2.0em",
+    fontSize: "1.6em",
     fontWeight: "bolder",
   };
   const placeStyle: React.CSSProperties = {
-    fontSize: "1.3em",
+    fontSize: "0.9em",
     fontWeight: "bold",
   };
   const currentDateStyle: React.CSSProperties = {
-    fontSize: "0.7em",
+    fontSize: "0.5em",
     fontWeight: "lighter",
   };
   return (

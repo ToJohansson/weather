@@ -9,7 +9,20 @@ const App = () => {
 
   return (
     <>
-      <WeatherApp objectData={objData} />
+      <div
+        className="header"
+        style={{
+          padding: "20px",
+          display: "flex",
+          justifyContent: "space-between",
+        }}
+      >
+        <h2>Header</h2>
+        <WeatherApp objectData={objData} />
+      </div>
+      <div className="main">
+        <h1>MAIN</h1>
+      </div>
     </>
   );
 };
