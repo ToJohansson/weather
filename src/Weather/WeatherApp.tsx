@@ -8,25 +8,17 @@ import symbols from "./symbols/index";
   based on latitude and longitude coordinates.
  */
 interface Props {
-  objectUserData?: {
-    name: string;
-    longitude: string;
-    latitude: string;
-  };
-}
-type UserData = {
   name: string;
   longitude: string;
   latitude: string;
-};
+}
+
 type WeatherData = {
   airTemperature: string;
   symbolCode: string;
 };
-const WeatherApp = ({
-  objectUserData = { name: "Varberg", longitude: "12.25", latitude: "57.10" },
-}: Props) => {
-  const { name, longitude, latitude } = objectUserData as UserData;
+const WeatherApp = (props: Props) => {
+  const { name, longitude, latitude } = props;
   const [weather, setWeather] = useState<WeatherData>({
     airTemperature: "",
     symbolCode: "",
@@ -50,7 +42,7 @@ const WeatherApp = ({
         });
       })
       .catch((err) => console.log(err));
-  }, [objectUserData]);
+  }, [longitude, latitude]);
 
   const temp = Math.round(parseInt(weather.airTemperature));
 
